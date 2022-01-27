@@ -1,0 +1,52 @@
+<div class="form-container">
+    <!-- <div class="usename">
+        <label for="name">useName:
+            <input type="text" [formControl]="user">
+            <span>Value: {{user.value}}</span>
+        </label>
+        <button (click)="changeUserName()">Change Name</button>
+    </div> -->
+
+    <form class="form-content" [formGroup]="userInfo" (ngSubmit)="onSubmit()">
+        <label for="usename">
+            用户名:<input type="text" formControlName="userName">
+        </label>
+        <span class="error" *ngIf="username && username.invalid && (username.touched || username.dirty)">
+            <span *ngIf="username.errors?.['required']">请输入用户名</span>
+            <!-- <span *ngIf="username.hasError('required')">请输入用户名</span> -->
+            <span *ngIf="username.errors?.['minlength']">请输入长度大于2的用户名</span>
+        </span>
+        <label for="phone">
+            手机号:<input type="text" formControlName="phone">
+        </label>
+        <span class="error" *ngIf="phone && phone.invalid && (phone.touched || phone.dirty)">
+            <span *ngIf="phone.errors?.['required']">请输入手机号</span>
+            <span *ngIf="phone.errors?.['pattern']">输入的手机号不合法</span>
+        </span>
+        <label for="sex">
+            性别:
+            <input type="radio" formControlName="sex" value="1"><span>男</span>
+            
+            <input type="radio" formControlName="sex" value="0"><span>女</span>
+        </label>
+        <form class="pwd" formGroupName="pwd">
+            <label for="">
+                密码: <input [type]="showPwd ? 'text' : 'password'" formControlName="password"><span class="show-pwd" (click)="password && showPwd=!showPwd">显示密码</span>
+            </label>
+            <span class="error" *ngIf="password && password.invalid && (password.touched || password.dirty)">
+                {{password.errors?.['passwordError']}}
+            </span>
+            <label for="">
+                确认密码: <input type="password" formControlName="confirmPassword">
+            </label>
+            <span class="error" *ngIf="confirmPassword && confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)">
+                {{confirmPassword.errors?.['passwordError']}}
+            </span>
+            <span class="error" *ngIf="pwd && pwd.invalid && (pwd.touched || pwd.dirty)">
+                {{pwd.errors?.['notEqual']}}
+            </span>
+        </form>
+        <button type="submit" [disabled]="userInfo.invalid">提交</button>
+        <button (click)="updateFormData()">更新表单</button>
+    </form>
+</div>

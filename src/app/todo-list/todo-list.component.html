@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Todo List</h1>
+    <div class="content">
+      <div class="add-content">
+        <input type="text" placeholder="请输入你的任务名称,按回车键确认" #todoName (keyup)="add($event)">
+      </div>
+      <ul>
+          <app-list-item class="list-item" *ngFor="let todo of todoListService.todoList" [todo]="todo" [onSelectStatus]="onSelectStatus"></app-list-item>
+      </ul>
+      <app-footer (onSelectStatus)="handleSelect($event)"></app-footer>
+    </div>
+  </div>
+<!-- <div class="container">
+  <h1>Todo List</h1>
+  <div class="content">
+    <div class="add-content">
+      <input type="text" placeholder="请输入你的任务名称,按回车键确认" #todoName (keyup)="add($event)">
+      <button (click)="add(todoName.value);todoName.value=''">Add</button>
+    </div>
+    <ul>
+        <app-list-item [todos]="todos" (currentTodoId)="deleteTodo($event)" (currentDoneTodoId)="changeTodo($event)">
+      </app-list-item>
+    </ul>
+  <app-footer (isAllfinish)="checkAll($event)" (clearAllDone)="clearAllDone()"></app-footer>
+  </div>
+</div> -->

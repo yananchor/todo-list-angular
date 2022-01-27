@@ -1,0 +1,44 @@
+.form-container {
+    width: 500px;
+    margin: 10px auto;
+    border: 1px solid rgb(228, 220, 220);
+    border-radius: 10px;
+    padding: 10px;
+}
+.form-content, .pwd {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.form-content label, .pwd label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.form-content button {
+    width: 30%;
+    margin-top: 10px;
+}
+.form-content input {
+    margin-left: 5px;
+}
+.usename {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.usename span {
+    margin-left: 10px;
+}
+.show-pwd {
+    margin-left: 5px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+.show-pwd:hover {
+    background-color: #ddd;
+}
+.error {
+    color: red;
+}

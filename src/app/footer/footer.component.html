@@ -1,0 +1,14 @@
+<div class="footer">
+    <label>
+    <input *ngIf="selectStatus" type="checkbox" [checked]="getCheckAll()" (change)="handleCheckAll($event)">
+    已完成 {{getHasFinish()}} / 全部 {{todoListService.todoList.length}}
+    </label>
+    <span>
+        <!-- <button (click)="clearAllDone.emit()">清除已完成任务</button> -->
+        <button *ngIf="!selectStatus; else noSelect" (click)="handleSelect(true)">选择</button>
+        <ng-template #noSelect>
+            <button (click)="handleSelect(false)">取消选择</button>
+            <button (click)="clearAllDoneTodo()" [disabled]="getHasFinish() === 0">清除已完成任务</button>
+        </ng-template>
+    </span>
+</div>

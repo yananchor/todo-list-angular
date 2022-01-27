@@ -1,0 +1,26 @@
+.container {
+    width: 500px;
+    margin: 10px auto;
+    border: 1px solid rgb(228, 220, 220);
+    border-radius: 10px;
+}
+.container h1 {
+    text-align: center;
+    padding-top: 5px;
+}
+.content {
+    padding: 10px;
+}
+.add-content {
+    margin-bottom: 20px;
+}
+.add-content input {
+    width: 97%;
+}
+.content ul {
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.list-item:last-child li {
+    border: none;
+}

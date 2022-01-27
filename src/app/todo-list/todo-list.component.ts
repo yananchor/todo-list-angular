@@ -1,12 +1,12 @@
-import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
-import { TodoList } from './todo-list';
-import { TodoListService } from './todo-list.service';
+import { AfterViewChecked, Component } from '@angular/core';
+import { TodoListService } from '../todo-list.service';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.css']
 })
-export class AppComponent implements AfterViewChecked {
+export class TodoListComponent implements AfterViewChecked {
   onSelectStatus: boolean = false;
   constructor(public todoListService: TodoListService) {}
 
@@ -64,4 +64,5 @@ export class AppComponent implements AfterViewChecked {
   // clearAllDone() {
   //   this.todos = this.todos.filter((item) => !item.done);
   // }
+
 }

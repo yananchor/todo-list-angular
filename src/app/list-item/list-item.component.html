@@ -1,0 +1,19 @@
+<li (mouseenter)="handleMouse(true)" (mouseleave)="handleMouse(false)">
+    <input *ngIf="onSelectStatus" type="checkbox" id="todo.id" [checked]="todo.done"
+        (change)="handleChange(!todo.done,todo.id)">
+    <div class="content">
+        <span [class.done]="todo.done" [hidden]="showEditName" (click)="!onSelectStatus ? handleEdit() : handleChange(!todo.done, todo.id) ">
+            {{todo.name}}
+        </span>
+        <!-- <ng-template #editName> -->
+        <input #editNameInput type="text" class="edit-input" [(ngModel)]="currentEditName" [hidden]="!showEditName"
+            (blur)="handleSave(todo)" (keyup)="saveNewTodo($event, todo)">
+        <!-- <input type="text" autofocus> -->
+        <!-- </ng-template> -->
+        <div class="btns">
+            <!-- <button [class.show]="showEditName && isActive" [disabled]="currentEditName === ''" (click)="handleSave(todo)">保存</button> -->
+            <!-- <button [class.show]="isActive" [disabled]="showEditName" (click)="handleEdit()">编辑</button> -->
+            <button (click)="handleDeleteTodo(todo.id)" [class.show]="isActive">删除</button>
+        </div>
+    </div>
+</li>

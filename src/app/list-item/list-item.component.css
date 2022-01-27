@@ -1,0 +1,52 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  padding: 0 5px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+li label,
+button {
+  cursor: pointer;
+}
+span {
+  cursor: pointer;
+  margin-left: 10px;
+}
+button {
+  display: none;
+  margin-left: 10px;
+}
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btns {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.edit-input {
+  height: 25px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding-left: 5px;
+}
+.edit-input:focus {
+  outline: 0;
+  border-color: rgb(29, 28, 28);
+}
+.show {
+  display: block;
+}
+.done {
+  text-decoration: line-through;
+}
